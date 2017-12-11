@@ -14,8 +14,8 @@ RUN wget https://codeload.github.com/star7th/showdoc/tar.gz/v1.4.3 -O showdoc.ta
 
 RUN tar -zxvf showdoc.tar.gz
 
-RUN cp -rf showdoc-1.4.3/* /var/www/html && rm -rf showdoc-1.4.3
+RUN cp -rf ~/showdoc-1.4.3 /var/www/html && rm -rf ~/showdoc-1.4.3
 
-RUN chmod -R 777 /var/www/html/
+RUN chmod -R 777 /var/www/html
 
 CMD ["apache2-foreground"]
