@@ -3,7 +3,7 @@ version: '2'
 services:
   showdoc:
     restart: always
-    image: nills/showdoc:latest
+    image: nills/showdoc:1.4.3
     volumes:
       - ./data/Application:/var/www/html/Application
       - ./data/uploads:/var/www/html/Public/Uploads

@@ -6,12 +6,15 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng12-dev \
         git \ 
+		get \
     && docker-php-ext-install -j$(nproc) gd mcrypt
 
 
-RUN git clone https://github.com/star7th/showdoc.git
+RUN wget https://codeload.github.com/star7th/showdoc/tar.gz/v1.4.3 -O showdoc.tar.gz
 
-RUN cp -rf showdoc/* /var/www/html && rm -rf showdoc
+RUN tar -zxvf showdoc.tar.gz
+
+RUN cp -rf showdoc-1.4.3/* /var/www/html && rm -rf showdoc-1.4.3
 
 RUN chmod -R 777 /var/www/html/
 
