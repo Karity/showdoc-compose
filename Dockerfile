@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
         wget \
     && docker-php-ext-install -j$(nproc) gd mcrypt
 
+RUN cd ~	
 
 RUN wget https://codeload.github.com/star7th/showdoc/tar.gz/v1.4.3 -O showdoc.tar.gz
 
