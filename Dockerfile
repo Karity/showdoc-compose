@@ -5,17 +5,15 @@ RUN apt-get update && apt-get install -y \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng12-dev \
-        git \ 
+        git \
         wget \
     && docker-php-ext-install -j$(nproc) gd mcrypt
 
-RUN cd ~	
+RUN wget https://codeload.github.com/star7th/showdoc/tar.gz/v1.4.3 -O showdoc.tar.gz
 
-RUN wget https://codeload.github.com/star7th/showdoc/tar.gz/v1.4.3 -O ~/showdoc.tar.gz
+RUN tar -zxvf showdoc.tar.gz -C /var/www/html
 
-RUN tar -zxvf ~/showdoc.tar.gz
-
-RUN cp -rf ~/showdoc-1.4.3 /var/www/html && rm -rf ~/showdoc-1.4.3
+RUN rm ./showdoc.tar.gz
 
 RUN chmod -R 777 /var/www/html
 
