@@ -3,6 +3,7 @@ version: '2'
 services:
   showdoc:
     restart: always
+    container_name: showdoc
     image: nills/showdoc:1.4.3
     volumes:
       - ./data/Application:/var/www/html/Application
