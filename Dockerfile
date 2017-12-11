@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng12-dev \
         git \ 
-		get \
+	get \
     && docker-php-ext-install -j$(nproc) gd mcrypt
 
 
